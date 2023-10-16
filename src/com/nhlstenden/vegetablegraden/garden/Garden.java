@@ -9,6 +9,7 @@ import java.util.HashSet;
 
 public class Garden implements GardenBase
 {
+    private static final int MAXIMUM_NUMBER_OF_VEGETABLES_ALLOWED = 27;
     private final HashSet<Vegetable> vegetables;
     private final Market market;
 
@@ -26,7 +27,7 @@ public class Garden implements GardenBase
     public void addVegetable(Vegetable vegetable) throws TooManyVegetablesException
     {
         // Assignment 3
-        if (this.vegetables.size() >= 27)
+        if (this.vegetables.size() >= MAXIMUM_NUMBER_OF_VEGETABLES_ALLOWED)
         {
             throw new TooManyVegetablesException();
         }
