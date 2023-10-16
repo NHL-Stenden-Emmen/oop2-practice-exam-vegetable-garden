@@ -7,11 +7,14 @@ import java.util.HashSet;
 
 public class GridGarden implements GardenBase
 {
+    private static final int AMOUNT_OF_COLUMNS = 16;
+    private static final int AMOUNT_OF_ROWS = 34;
+
     private final Vegetable[][] garden;
 
     public GridGarden()
     {
-        this.garden = new Vegetable[16][34];
+        this.garden = new Vegetable[AMOUNT_OF_COLUMNS][AMOUNT_OF_ROWS];
     }
 
     @Override
