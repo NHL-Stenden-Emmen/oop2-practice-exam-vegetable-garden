@@ -58,4 +58,28 @@ class AsparagusTest
 
         assertEquals(Status.GROWING, this.asparagus.getStatus());
     }
+
+    @Test
+    void addSizeInCm_exactSize_shouldBeReadyToHarvest()
+    {
+        this.asparagus.addSizeInCm(20.0);
+
+        assertEquals(Status.READY_TO_HARVEST, this.asparagus.getStatus());
+    }
+
+    @Test
+    void addSizeInCm_belowSize_shouldBeGrowing()
+    {
+        this.asparagus.addSizeInCm(19.0);
+
+        assertEquals(Status.GROWING, this.asparagus.getStatus());
+    }
+
+    @Test
+    void addSizeInCm_aboveSize_shouldBeReadyToHarvest()
+    {
+        this.asparagus.addSizeInCm(21.0);
+
+        assertEquals(Status.READY_TO_HARVEST, this.asparagus.getStatus());
+    }
 }

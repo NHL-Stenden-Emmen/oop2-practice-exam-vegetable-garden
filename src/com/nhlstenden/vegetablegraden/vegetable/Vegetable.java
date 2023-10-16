@@ -74,6 +74,11 @@ public abstract class Vegetable
     protected void addSizeInCm(double sizeInCm)
     {
         this.sizeInCm += sizeInCm;
+
+        if (this.getSizeInCm() >= this.getRipeLength())
+        {
+            this.setStatus(Status.READY_TO_HARVEST);
+        }
     }
 
     protected void setStatus(Status status)
@@ -84,11 +89,6 @@ public abstract class Vegetable
     protected void generalGrowth(int lux, int mm)
     {
         double growth = (lux * this.getCmPerLux()) + (mm * this.getCmPerMilimeter());
-
-        if (this.getSizeInCm() >= this.getRipeLength())
-        {
-            this.setStatus(Status.READY_TO_HARVEST);
-        }
 
         this.addSizeInCm(growth);
     }
