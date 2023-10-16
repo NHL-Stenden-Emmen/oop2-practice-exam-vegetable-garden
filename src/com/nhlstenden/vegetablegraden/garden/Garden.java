@@ -26,7 +26,8 @@ public class Garden implements GardenBase
     public void addVegetable(Vegetable vegetable) throws TooManyVegetablesException
     {
         // Assignment 3
-        if (this.vegetables.size() >= 27) {
+        if (this.vegetables.size() >= 27)
+        {
             throw new TooManyVegetablesException();
         }
 
