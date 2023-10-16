@@ -30,6 +30,6 @@ public class Asparagus extends Vegetable implements Sellable
     @Override
     public double getPrice()
     {
-        return 0.12;
+        return this.getSizeInCm() * 0.12;
     }
 }

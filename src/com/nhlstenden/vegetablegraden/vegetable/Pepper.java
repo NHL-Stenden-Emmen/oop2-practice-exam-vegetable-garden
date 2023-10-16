@@ -36,6 +36,6 @@ public class Pepper extends Vegetable implements Sellable
     @Override
     public double getPrice()
     {
-        return 0.15;
+        return this.getSizeInCm() * 0.15;
     }
 }
